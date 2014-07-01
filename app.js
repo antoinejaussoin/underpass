@@ -38,6 +38,7 @@ app.use(cookieParser());
 
 /* Static Routes */
 app.use('/assets', express.static(path.join(__dirname, 'dist'), cacheObject));
+app.use('/dl', express.static(path.join(__dirname, 'dl')));
 
 /* Dynamic Routes */
 app.use(layouts);
@@ -64,13 +65,13 @@ function auth(req, res, next){
 app.use(function(req, res, next) {
     var ip = req.connection.remoteAddress;
     
-    geoloc(ip, function(result){
+    /*geoloc(ip, function(result){
         if (result && result.country)
-            logger.info('404: ' + req.url+' : '+ip+' ('+result.country+', '+result.city+', '+result.zip+')');
+            logger.info('404: ' + req.url + ' : ' + ip + ' (' + result.country + ', ' + result.city+', '+result.zip+')');
         else
             logger.info('404: ' + req.url+' : '+ip);
        
-    });
+    });*/
 
     var err = new Error('Not Found');
     res.status(404);

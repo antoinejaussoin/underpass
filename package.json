@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon ./index.js",
+    "start": "nodemon --debug ./index.js",
     "debug": "node-inspector & nodemon --debug ./index.js",
     "kill": "killall -9 node",
     "prod": "NODE_ENV=production gulp && PORT=80 NODE_ENV=production nodemon ./index.js"
@@ -25,9 +25,6 @@
     "ejs": "^1.0.0",
     "express": "^4.4.5",
     "express-ejs-layouts": "^1.1.0",
-    "morgan": "^1.1.1",
-    "serve-favicon": "^2.0.1",
-    "winston": "^0.7.3",
     "gulp": "^3.8.2",
     "gulp-autoprefixer": "0.0.7",
     "gulp-bump": "^0.1.9",
@@ -42,6 +39,10 @@
     "gulp-notify": "^1.4.0",
     "gulp-rename": "^1.2.0",
     "gulp-rev": "^0.4.1",
-    "gulp-uglify": "^0.3.1"
+    "gulp-uglify": "^0.3.1",
+    "morgan": "^1.1.1",
+    "request": "^2.36.0",
+    "serve-favicon": "^2.0.1",
+    "winston": "^0.7.3"
   }
 }

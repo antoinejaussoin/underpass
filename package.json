@@ -1,6 +1,6 @@
 {
   "name": "Underpass",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Proxy work around",
   "main": "index.js",
   "scripts": {

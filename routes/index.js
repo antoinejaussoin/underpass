@@ -2,7 +2,7 @@ var express = require('express');
 var http = require('http');
 var request = require('request');
 var router = express.Router();
-var packer = require('zip-stream');
+var packer = require('tar-stream');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -16,34 +16,21 @@ router.post('/', function(req, res, next) {
 	console.log(url);
 	console.log(fileName);
 
-	var archive = new packer();
-
-	archive.on('error', function(err) {
-	  throw err;
-	});
+	var archive = packer.pack();
 
 	var file = request(url);
-	res.setHeader('Content-disposition', 'attachment; filename='+fileName+'.zip');
-	archive.pipe(res);
+	res.setHeader('Content-disposition', 'attachment; filename='+fileName+'.tar');
+	
 
-	// pipe archive where you want it (ie fs, http, etc)
-	// listen to the destination's end, close, or finish event
-
-	archive.entry(file, { name: fileName }, function(err, entry) {
-	  if (err) throw err;
-	   archive.finalize();
+	var entry = archive.entry({ name: fileName }, function(err) {
+		if (err)
+			console.log(err);
+	    archive.finalize();
 	});
 
-
-
-	//res.setHeader("content-type", "application/octet-stream");
+archive.pipe(res);
+	file.pipe(entry);
 	
-	
-	//file.pipe(res);
-
-
-	
-
 });
 
 

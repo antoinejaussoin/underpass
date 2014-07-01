@@ -11,15 +11,17 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res, next) {
 
 	var url = req.body.link;
+	var fileName = req.body.name;
 	console.log(url);
+	console.log(fileName);
 
 	//res.setHeader("content-type", "application/octet-stream");
 	var file = request(url);
+	res.setHeader('Content-disposition', 'attachment; filename='+fileName);
 	file.pipe(res);
 
 
 	
-	//res.redirect('/');
 
 });
 

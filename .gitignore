@@ -3,3 +3,4 @@ views/layout.ejs
 npm-debug.log
 bower_components/
 dist/
+dl/git.exe

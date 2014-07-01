@@ -125,6 +125,7 @@ gulp.task('watch', function() {
   gulp.watch(stylesheets, ['styles']);
   gulp.watch(scripts, ['scripts']);
   gulp.watch(images, ['images']);
+  gulp.watch('views/layout_src.ejs', ['html-replace']);
   gulp.watch('gulpfile.js', ['styles', 'fonts', 'scripts', 'html-replace', 'ie']);  
 
   // Create LiveReload server

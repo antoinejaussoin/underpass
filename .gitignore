@@ -1,3 +1,5 @@
 node_modules/
 views/layout.ejs
 npm-debug.log
+bower_components/
+dist/

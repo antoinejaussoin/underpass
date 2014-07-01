@@ -1,10 +1,14 @@
 {
   "name": "Underpass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Proxy work around",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon ./index.js",
+    "debug": "node-inspector & nodemon --debug ./index.js",
+    "kill": "killall -9 node",
+    "prod": "NODE_ENV=production gulp && PORT=80 NODE_ENV=production nodemon ./index.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "Underpass",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "authors": [
     "Antoine Jaussoin"
   ],
@@ -17,6 +17,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "angularjs": "*",
+    "angular": "~1.2.19",
+    "angular-animate": "~1.2.19"
   }
 }

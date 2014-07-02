@@ -89,7 +89,7 @@ gulp.task('scripts', function(){
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(jsOutput))
         .pipe(rename({suffix: '.' + version + '.min'}))
-        .pipe(uglify())
+        .pipe(uglify({mangle: false}))
         .pipe(gulp.dest(jsOutput));
 });
 

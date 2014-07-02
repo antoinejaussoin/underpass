@@ -1,0 +1,17 @@
+div.download-box{
+	width:800px;
+	margin:auto;
+	position:absolute;
+	top:50%;
+	right:50%;
+	margin-right:-400px;
+	margin-top:-50px;
+	padding:20px;
+	border:1px solid #CCC;
+	border-radius: 10px;
+	box-shadow: 0 0 20px #000000;
+}
+
+input#link{
+	width:480px;
+}

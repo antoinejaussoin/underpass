@@ -23,26 +23,13 @@ router.post('/', function(req, res, next) {
 	});
 
 	var file = request(url);
-	res.setHeader('Content-disposition', 'attachment; filename='+fileName+'.zip');
+	res.setHeader('Content-disposition', 'attachment; filename='+fileName+'.gzip');
 	archive.pipe(res);
-
-	// pipe archive where you want it (ie fs, http, etc)
-	// listen to the destination's end, close, or finish event
 
 	archive.entry(file, { name: fileName }, function(err, entry) {
 	  if (err) throw err;
 	   archive.finalize();
-	});
-
-
-
-	//res.setHeader("content-type", "application/octet-stream");
-	
-	
-	//file.pipe(res);
-
-
-	
+	});	
 
 });
 

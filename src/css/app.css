@@ -1,5 +1,6 @@
 body{
 	background-image: url('/assets/img/bg.jpg');
+	background-size: cover;
 }
 
 html, body {
@@ -22,7 +23,7 @@ html, body {
   clear:both;
   padding-top:10px;
   background-color:#2C003F;
-  border-top:1px solid #5C0087;
+  border-top:3px solid #5C0087;
 } 
 
 .footer p {
@@ -31,13 +32,25 @@ html, body {
 	font-size: 0.9em;
 	padding-right: 10px;
 	margin-top:5px;
+	float:right;
+	width:500px;
+}
+
+.footer h1 {
+	color:white;
+	font-size:1.5em;
+	padding-left:15px;
+	position:relative;
+	top:-17px;
+	float:left;
+	text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
 }
 
 div.download-box {
 	width:800px;
 	margin:auto;
 	position:absolute;
-	top:50%;
+	top:40%;
 	right:50%;
 	margin-right:-400px;
 	margin-top:-50px;
@@ -64,19 +77,3 @@ input#link {
  	opacity:0;
 }
 
-h1.title {
-	color:#2C003F;
-	text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
-	margin:auto;
-	text-align: center;
-	background-color:white;
-	width:300px;
-	padding:30px;
-	border-radius:  0 0 20px 20px;
-	border:1px solid #2C003F;
-	box-shadow: 0 0 20px #5C0087;
-	position:relative;
-	top:-10px;
-	font-size:2em;
-	padding:20px;
-} 

@@ -1,4 +1,6 @@
 $(function(){
+	return;
+	
 	var link = $('#link');
 	var fileName = $("#name");
 	var button = $('#download');

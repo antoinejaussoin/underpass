@@ -63,6 +63,7 @@ var layout = 'views/layout_src.ejs';
 gulp.task('styles', function() {
     return gulp.src(stylesheets)
         .pipe(concat('styles.css'))
+        .pipe(autoprefixer(["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true }))
         .pipe(gulp.dest(cssOutput))
         .pipe(rename({suffix: '.' + version + '.min'}))
         .pipe(minifycss())

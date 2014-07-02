@@ -1,51 +1,3 @@
-div.download-box {
-	width:800px;
-	margin:auto;
-	position:absolute;
-	top:50%;
-	right:50%;
-	margin-right:-400px;
-	margin-top:-50px;
-	padding:20px;
-	border:1px solid #CCC;
-	border-radius: 10px;
-	box-shadow: 0 0 20px #000000;
-	background-color:white;
-}
-
-input#link {
-	width:480px;
-}
-
-.show-animation {
- 	margin:0;
-}
-
-.show-animation {
-	-webkit-transition:all linear 0.5s;
-	transition:all linear 0.5s;
-}
-
-.show-animation.ng-hide {
- 	opacity:0;
-}
-
-h1.title {
-	color:#2C003F;
-	text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
-	margin:auto;
-	text-align: center;
-	background-color:white;
-	width:300px;
-	padding:30px;
-	border-radius:  0 0 20px 20px;
-	border:1px solid #2C003F;
-	box-shadow: 0 0 20px #5C0087;
-	position:relative;
-	top:-10px;
-	font-size:2em;
-	padding:20px;
-} 
 body{
 	background-image: url('/assets/img/bg.jpg');
 }
@@ -80,3 +32,51 @@ html, body {
 	padding-right: 10px;
 	margin-top:5px;
 }
+
+div.download-box {
+	width:800px;
+	margin:auto;
+	position:absolute;
+	top:50%;
+	right:50%;
+	margin-right:-400px;
+	margin-top:-50px;
+	padding:20px;
+	border:1px solid #CCC;
+	border-radius: 10px;
+	box-shadow: 0 0 20px #000000;
+	background-color:white;
+}
+
+input#link {
+	width:480px;
+}
+
+.show-animation {
+ 	margin:0;
+}
+
+.show-animation {
+	transition:all linear 0.5s;
+}
+
+.show-animation.ng-hide {
+ 	opacity:0;
+}
+
+h1.title {
+	color:#2C003F;
+	text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
+	margin:auto;
+	text-align: center;
+	background-color:white;
+	width:300px;
+	padding:30px;
+	border-radius:  0 0 20px 20px;
+	border:1px solid #2C003F;
+	box-shadow: 0 0 20px #5C0087;
+	position:relative;
+	top:-10px;
+	font-size:2em;
+	padding:20px;
+} 

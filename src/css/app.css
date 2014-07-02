@@ -1,4 +1,4 @@
-div.download-box{
+div.download-box {
 	width:800px;
 	margin:auto;
 	position:absolute;
@@ -12,6 +12,24 @@ div.download-box{
 	box-shadow: 0 0 20px #000000;
 }
 
-input#link{
+input#link {
 	width:480px;
+}
+
+.show-animation {
+ 	margin:0;
+}
+
+.show-animation {
+	-webkit-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+}
+
+.show-animation.ng-hide {
+ 	opacity:0;
+}
+
+h1.title {
+	color:#CCC;
+	border:1px solid red;
 }

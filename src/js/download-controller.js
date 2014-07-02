@@ -7,17 +7,16 @@
 		$scope.link = 'http://localhost:3000/dl/git.exe';
 		$scope.name = 'git.exe';
 		$scope.isValid = false;
+		$scope.isDownloading = false;
 
 		$scope.download = function() {
-			/*$http.post('/', {
-				link: $scope.link,
-				name: $scope.name
-			}).then(function(){
-				//alert('ok');
-			}, function(){
+			$scope.isDownloading = true;
+		}
 
-			})*/
-	alert('ok');
+		$scope.downloadAgain = function(){
+			$scope.isDownloading = false;
+			$scope.link = '';
+			$scope.name = '';
 		}
 
 		function guessFileName(){

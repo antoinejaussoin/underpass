@@ -8,8 +8,10 @@
 		$scope.name = '';
 		$scope.isValid = false;
 		$scope.isDownloading = false;
+		$scope.downloadCount = 0;
 
 		$scope.download = function() {
+			$scope.downloadCount ++;
 			$scope.isDownloading = true;
 		}
 

@@ -48,7 +48,8 @@ var images = [
 var scripts = [
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'src/js/app.js'
+    'src/js/app.js',
+    'src/js/download-controller.js'
 ]
 
 var ie = [

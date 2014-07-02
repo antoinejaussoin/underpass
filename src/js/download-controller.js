@@ -8,6 +8,7 @@
 		$scope.name = 'git.exe';
 		$scope.isValid = false;
 		$scope.isDownloading = false;
+		$scope.events = '';
 
 		$scope.download = function() {
 			$scope.isDownloading = true;
@@ -38,6 +39,11 @@
 		function setValidity(){
 			$scope.isValid = $scope.link.length > 8 && $scope.name.length >= 3;
 		}
+
+		var socket = io();
+		socket.on('file', function(data){
+			$scope.events += data.hello + '<br />';
+		})
 
 		$scope.$watch('link', guessFileName);
 		$scope.$watch('link', setValidity);

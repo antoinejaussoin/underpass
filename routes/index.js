@@ -1,8 +1,11 @@
 var express = require('express');
-var http = require('http');
 var request = require('request');
 var router = express.Router();
 var packer = require('zip-stream');
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -30,6 +33,8 @@ router.post('/', function(req, res, next) {
 	  if (err) throw err;
 	   archive.finalize();
 	});	
+
+	io.emit('file', {hello: 'world'});
 
 });
 

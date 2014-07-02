@@ -4,8 +4,8 @@
 	var app = angular.module('underpass');
 
 	app.controller('downloadController', function($scope, $http) {
-		$scope.link = 'http://localhost:3000/dl/git.exe';
-		$scope.name = 'git.exe';
+		$scope.link = '';
+		$scope.name = '';
 		$scope.isValid = false;
 		$scope.isDownloading = false;
 

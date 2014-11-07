@@ -3,9 +3,11 @@ var http = require('http');
 var request = require('request');
 var router = express.Router();
 var packer = require('zip-stream');
+var logger = require('./../log');
 
 /* GET home page. */
 router.get('/', function (req, res) {
+    logger.info('Website accessed from IP ' + req.connection.remoteAddress);
     res.render('index');
 });
 
@@ -19,6 +21,8 @@ router.post('/', function (req, res, next) {
     var fileName = req.body.name;
     console.log(url);
     console.log(fileName);
+
+    logger.info('Downloading ' + url + ', file: ' + fileName);
 
     try {
         var archive = new packer();
@@ -35,8 +39,10 @@ router.post('/', function (req, res, next) {
             name: fileName
         }, function (err, entry) {
             if (err) {
+                logger.error('Error downloading ' + url + ', file: ' + fileName + ', error: ' + err);
                 res.redirect('/error');
             } else {
+                logger.info('Download success for ' + url + ', file: ' + fileName);
                 archive.finalize();
             }
         });

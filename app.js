@@ -1,5 +1,5 @@
 var express = require('express');
-var layouts = require('express-ejs-layouts');
+var swig = require('swig');
 var path = require('path');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
@@ -9,7 +9,6 @@ var basicAuth = require('basic-auth');
 var compression = require('compression');
 var logger = require('./log');
 var geoloc = require('./ipgeo');
-var swig = require('swig');
 var version = require('./package.json').version;
 
 var routes = require('./routes/index');
@@ -39,10 +38,12 @@ swig.setFilter('version', function(input) {
 
 
 //app.use(favicon(__dirname + '/dist/img/favicon.ico'));
-app.use(compression());
+//app.use(compression());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cookieParser());
 
 /* Static Routes */
@@ -50,7 +51,6 @@ app.use('/assets', express.static(path.join(__dirname, 'dist'), cacheObject));
 app.use('/dl', express.static(path.join(__dirname, 'dl')));
 
 /* Dynamic Routes */
-app.use(layouts);
 app.use('/', routes);
 
 /* Logging */

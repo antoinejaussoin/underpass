@@ -1,79 +1,70 @@
-body{
-	background-image: url('/assets/img/bg.jpg');
-	background-size: cover;
+body {
+    background-image: url('/assets/img/bg.jpg');
+    background-size: cover;
 }
-
-html, body {
-  height: 100%;
+html,
+body {
+    height: 100%;
 }
-
 #wrap {
-  min-height: 100%;
+    min-height: 100%;
 }
-
 #main {
-  overflow:auto;
-  padding-bottom:150px; /* this needs to be bigger than footer height*/
+    overflow: auto;
+    padding-bottom: 150px;
+    /* this needs to be bigger than footer height*/
 }
-
 .footer {
-  position: relative;
-  margin-top: -50px; /* negative value of footer height */
-  height: 50px;
-  clear:both;
-  padding-top:10px;
-  background-color:#2C003F;
-  border-top:3px solid #5C0087;
-} 
-
+    position: relative;
+    margin-top: -50px;
+    /* negative value of footer height */
+    height: 50px;
+    clear: both;
+    padding-top: 10px;
+    background-color: #2C003F;
+    border-top: 3px solid #5C0087;
+}
 .footer p {
-	color:white;
-	text-align: right;
-	font-size: 0.9em;
-	padding-right: 10px;
-	margin-top:5px;
-	float:right;
-	width:500px;
+    color: white;
+    text-align: right;
+    font-size: 0.9em;
+    padding-right: 10px;
+    margin-top: 5px;
+    float: right;
+    width: 500px;
 }
-
 .footer h1 {
-	color:white;
-	font-size:1.5em;
-	padding-left:15px;
-	position:relative;
-	top:-17px;
-	float:left;
-	text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
+    color: white;
+    font-size: 1.5em;
+    padding-left: 15px;
+    position: relative;
+    top: -17px;
+    float: left;
+    text-shadow: 2px 2px 10px rgba(150, 150, 150, 1);
 }
-
 div.download-box {
-	width:800px;
-	margin:auto;
-	position:absolute;
-	top:40%;
-	right:50%;
-	margin-right:-400px;
-	margin-top:-50px;
-	padding:20px;
-	border:1px solid #CCC;
-	border-radius: 10px;
-	box-shadow: 0 0 20px #000000;
-	background-color:white;
+    width: 810px;
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    margin-right: -400px;
+    margin-top: -50px;
+    padding: 20px;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000000;
+    background-color: white;
 }
-
 input#link {
-	width:480px;
+    width: 480px;
 }
-
 .show-animation {
- 	margin:0;
+    margin: 0;
 }
-
 .show-animation {
-	transition:all linear 0.5s;
+    transition: all linear 0.5s;
 }
-
 .show-animation.ng-hide {
- 	opacity:0;
+    opacity: 0;
 }
-

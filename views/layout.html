@@ -21,12 +21,14 @@
 
     <div id="wrap">
         <div id="main" class="container clear-top">
+           
             {% block content %}{% endblock %}
+            
         </div>
     </div>
     <footer class="footer">
         <h1>Underpass 3</h1>
-        <p>Copyright &copy; Nerisson 2011-2014. Version </p>
+        <p>Copyright &copy; Nerisson 2011-2014. Version {{ '@version' | version }}.</p>
     </footer>
 
     <script type="text/javascript" src="{{ '/assets/js/scripts@version.js' | version }}"></script>

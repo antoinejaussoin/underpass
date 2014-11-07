@@ -9,13 +9,15 @@ var basicAuth = require('basic-auth');
 var compression = require('compression');
 var logger = require('./log');
 var geoloc = require('./ipgeo');
+var swig = require('swig');
+var version = require('./package.json').version;
 
 var routes = require('./routes/index');
 
 var version = require('./package.json').version;
-global.version = version;
 
 var app = express();
+var isDev = app.get('env') === 'development';
 var cacheObject;
 if (app.get('env') === 'development') {
     cacheObject = {};
@@ -24,9 +26,16 @@ if (app.get('env') === 'development') {
 }
 
 // view engine setup
+app.engine('html', swig.renderFile);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.set('layout', 'layout.ejs')
+app.set('view engine', 'html');
+
+swig.setDefaults({ cache: false });
+swig.setFilter('version', function(input) {
+    if (input === '@version') return version;
+    if (isDev) return input.replace('@version', '' );
+    return input.replace('@version', '.'+version+'.min' );
+});
 
 
 //app.use(favicon(__dirname + '/dist/img/favicon.ico'));

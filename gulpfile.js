@@ -1,5 +1,5 @@
 var os = require('os');
-var isWindows = os.platform() === "win32";
+var isWindows = false; //os.platform() === "win32";
 var isProduction = process.env.NODE_ENV === 'production';
 
 if (isWindows){
@@ -111,26 +111,11 @@ gulp.task('bump', function(){
   .pipe(gulp.dest('./'));
 });
 
-gulp.task('html-replace', function() {
-    
-    var cssDestination = isProduction ? 'styles.'+version+'.min.css' : 'styles.css';
-    var jsDestination = isProduction ? 'scripts.'+version+'.min.js' : 'scripts.js';
-
-  gulp.src(layout)
-    .pipe(rename(layoutOutput))
-    .pipe(htmlreplace({
-        'css': '/assets/css/' + cssDestination,
-        'js': '/assets/js/' + jsDestination 
-    }))
-    .pipe(gulp.dest('views'));
-});
-
 gulp.task('watch', function() {
   gulp.watch(stylesheets, ['styles']);
   gulp.watch(scripts, ['scripts']);
   gulp.watch(images, ['images']);
-  gulp.watch('views/layout_src.ejs', ['html-replace']);
-  gulp.watch('gulpfile.js', ['styles', 'fonts', 'scripts', 'html-replace', 'ie']);  
+  gulp.watch('gulpfile.js', ['styles', 'fonts', 'scripts', 'ie']);  
 
   // Create LiveReload server
   var server = livereload();
@@ -144,10 +129,10 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['clean'], function() {
     if (isProduction) {
-        gulp.start('styles', 'fonts', 'images', 'scripts', 'html-replace', 'ie');
+        gulp.start('styles', 'fonts', 'images', 'scripts', 'ie');
     }
     else {
-        gulp.start('styles', 'fonts', 'images', 'scripts', 'bump', 'html-replace', 'ie');
+        gulp.start('styles', 'fonts', 'images', 'scripts', 'ie');
     }
     
 });

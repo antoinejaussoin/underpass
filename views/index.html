@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div ng-controller="downloadController">
+
+    <div class="download-box">
+        <form class="form-inline" method="post" role="form" action="/" data-ng-show="!isDownloading">
+            <div class="form-group">
+                <input type="text" class="form-control" id="link" name="link" placeholder="Paste your file's URL here" data-ng-model="link">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="File Name" data-ng-model="name">
+            </div>
+            <button type="submit" class="btn btn-primary" id="download" data-ng-disabled="!isValid" data-ng-click="download()">Download</button>
+        </form>
+
+        <div class="alert alert-success show-animation" role="alert" data-ng-show="isDownloading">
+            Your file is being downloaded. You {{downloadCount}} - Proxy 0.&nbsp;<a href="javascript:void(0)" class="alert-link" data-ng-click="downloadAgain()">Let's get another file</a>.
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

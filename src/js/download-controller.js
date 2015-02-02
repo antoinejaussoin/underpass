@@ -16,6 +16,7 @@
                 link: $scope.link,
                 name: $scope.name
             });
+            console.log($scope.downloadList);
         }
 
         $scope.downloadAgain = function () {

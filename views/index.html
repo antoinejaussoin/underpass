@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+{% raw %}
 
 <div ng-controller="downloadController">
 
@@ -24,9 +25,10 @@
     </div>
     
     <div class="download-box" data-ng-show="downloadList.length > 0">
-        <p>So far, you have downloaded the following:</p>
-        
-        <pre>{{downloadList}}</pre>
+       
+       <div class="alert alert-info" role="alert">
+            So far, you have downloaded the following:
+        </div>
         
         <ul>
             <li data-ng-repeat="dl in downloadList"><em>{{dl.name}}</em>: {{dl.link}}</li>
@@ -35,4 +37,5 @@
 
 </div>
 
+{% endraw %}
 {% endblock %}

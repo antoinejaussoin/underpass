@@ -53,15 +53,6 @@ div.download-box {
 form.form-inline div.form-group input {
     width: 100%;
 }
-.show-animation {
-    margin: 0;
-}
-.show-animation {
-    transition: all linear 0.5s;
-}
-.show-animation.ng-hide {
-    opacity: 0;
-}
 li em {
     font-weight: bold;
     font-style: normal;

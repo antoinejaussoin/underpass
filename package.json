@@ -4,8 +4,8 @@
   "description": "Proxy work around",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --debug ./index.js",
-    "debug": "node-inspector & nodemon --debug ./index.js",
+    "start": "nodemon ./index.js",
+    "debug": "node-inspector & nodemon ./index.js",
     "kill": "killall -9 node",
     "prod": "NODE_ENV=production gulp && PORT=80 NODE_ENV=production nodemon ./index.js"
   },
